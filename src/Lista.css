@@ -1,0 +1,23 @@
+.select-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+}
+
+.select-type h1 {
+    padding: 30px;
+}
+
+.select-type select {
+    margin: 30px;
+    padding: 10px;
+}
+
+.display {
+    text-align: center;
+}
+
+.display li {
+    margin: .5em;
+}
