@@ -1,0 +1,10 @@
+.usuarios {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.containerUsuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

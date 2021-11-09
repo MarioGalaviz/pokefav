@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
+import Usuarios from './Usuarios';
 
 function Home() {
     return (
+        <div>
         <main>
             <h1>Escoje a tus pokemones favoritos!</h1>
             <Link to='/lista'>
@@ -14,6 +16,8 @@ function Home() {
                 <p>Iniciar sesión</p>
             </Link>
         </main>
+        <Usuarios />
+        </div>
     );
   }
   
