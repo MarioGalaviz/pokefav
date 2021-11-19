@@ -1,0 +1,66 @@
+.login {
+    text-align: center;
+}
+
+.login h1 {
+    margin-top: 100px;
+}
+
+.login .usuario {
+    margin-top: 40px;
+}
+
+.login .contra {
+    margin-top: 20px;
+}
+
+.login button {
+    margin-top: 40px;
+    background-color: #c8d8e4;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+
+  .login button:hover {
+    background-color: #2b6777 ;
+    color: white;
+  }
+
+.login p {
+    margin: 5px;
+    font-size: .95em;
+}
+
+.login .contra-incorrecta {
+    color: red;
+    font-size: .7em;
+}
+
+.login p:hover {
+    color: blue;
+}
+
+.login input {
+    padding: 5px;
+    margin: 5px;
+}
+
+.bienvenido {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    height: 300px;
+}
+
+.bienvenido h1 {
+    width: 100%;
+    align-self: center;
+}
+
+.bienvenido p {
+    width: 100%;
+    color: blue;
+    text-decoration: underline;
+}
