@@ -19,18 +19,6 @@ body, html {
   height: 100%;
 }
 
-nav h1 {
-  color:#f2f2f2;
-  padding: 0 20px;
-}
-
-nav {
-  background-color: #2b6777;
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-
 main {
   text-align: center;
   height: 480px;

@@ -1,0 +1,62 @@
+.perfil {
+    text-align: center;
+}
+
+.titulo {
+    margin-top: 35px;
+}
+
+.cerrar-sesion {
+    color: red;
+    font-size: 1em;
+}
+
+.container-first {
+    text-align: center;
+    margin-top: 30px;
+    background-color: #c8d8e4;
+    padding: 30px;
+}
+
+.container-first img {
+    width: 50%;
+    height: auto;
+}
+
+.container-first p {
+    font-size: .9em;
+}
+
+.container-second {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.container-second h1 {
+    font-size: 1.6em;
+}
+
+.container-second p {
+    font-size: .9em;
+}
+
+.container-second-pokes {
+    width: 45%;
+    text-align: center;
+    
+}
+
+.container-second-pokes img {
+    width: 50%;
+    height: auto;
+}
+
+.container-otros {
+    width: 100%;
+    color: #2b6777;
+    padding: 50px 0;
+    font-weight: bold;
+}
+

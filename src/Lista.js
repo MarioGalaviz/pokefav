@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Lista.css';
 
-function Lista() {
+function Lista(props) {
   
-  const [tipo, setTipo] = useState('fire');
+  //const [tipo, setTipo] = useState('fire');
 
   const cambiarTipo = (value) => {
-    setTipo(value);
+    props.cambiarTipo(value);
     };
 
   useEffect(() => {
     const fetchList = async () => {
     const data = await fetch(
-      `https://pokeapi.co/api/v2/type/${tipo}`
+      `https://pokeapi.co/api/v2/type/${props.tipo}`
       );
     const list = await data.json();
     
@@ -21,7 +21,7 @@ function Lista() {
          
   };
     fetchList();
-  },[tipo]);
+  },[props.tipo]);
 
   const [lista, setLista] = useState([{
     pokemon: {
@@ -33,7 +33,7 @@ function Lista() {
 
     return (
       <div>
-        <Select onChange={cambiarTipo} tipo={tipo}/>
+        <Select onChange={cambiarTipo} tipo={props.tipo}/>
         <Display lista={lista}/>
       </div>
     )
@@ -62,7 +62,64 @@ function Select(props) {
     {
       label: 'Roca',
       value: 'rock'
+    },
+    {
+      label: 'Volador',
+      value: 'flying'
+    },
+    {
+      label: 'Psiquico',
+      value: 'psychic'
+    },
+    {
+      label: 'Hada',
+      value: 'fairy'
+    },
+    {
+      label: 'Normal',
+      value: 'normal'
+    },
+    {
+      label: 'Acero',
+      value: 'steel'
+    },
+    {
+      label: 'Hielo',
+      value: 'ice'
+    },
+    {
+      label: 'Obscuro',
+      value: 'dark'
+    },
+    {
+      label: 'Pasto',
+      value: 'grass'
+    },
+    {
+      label: 'Eléctrico',
+      value: 'electric'
+    },
+    {
+      label: 'Luchador',
+      value: 'fighting'
+    },
+    {
+      label: 'Veneno',
+      value: 'poison'
+    },
+    {
+      label: 'Tierra',
+      value: 'ground'
+    },
+    {
+      label: 'Insecto',
+      value: 'bug'
+    },
+    {
+      label: 'Fantasma',
+      value: 'ghost'
     }
+    
   ];
 
   return (

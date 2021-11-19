@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import './Detalle.css';
 
 
 
-function Detalle({ animate }) {
+function Detalle(props) {
     
     let params = useParams();
+    let navigate = useNavigate();
+    
 
     const [pokemon, setPokemon] = useState({
         sprites: {},
@@ -15,6 +17,8 @@ function Detalle({ animate }) {
         name: '',
         stats: []
     });
+
+    const [mostrarModalDet, setMostrarModalDet] = useState(false);
     
     useEffect(() => {
         const fetchPokemon = async () => {
@@ -25,14 +29,15 @@ function Detalle({ animate }) {
         fetchPokemon();
         
     },[params.poke])
-
     
     
     
-    return(<div>
-        <Link to='/lista'>
-        <p className='volver'>Volver a lista</p>
-        </Link>
+    return(<div className='detalle-container'>
+        <div className='volver-container'>
+            <Link to='/lista'>
+                <p className='volver'>Volver a lista</p>
+            </Link>   
+        </div>
         <div className='lista'
         ><h1>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
         <img alt={pokemon.name} src={pokemon.sprites.front_default}/>    
@@ -59,9 +64,25 @@ function Detalle({ animate }) {
                 ))}
             </ul>
         </div>
-        
-        
-        
+        {/* botón agregar a favoritos */}
+        {props.username ? 
+        // <Link to={`/agregar/${params.poke}`}>
+            <button className='button-agregar' onClick={() => navigate(`/agregar/${params.poke}`)}>Agregar a favs</button>   
+        // </Link>
+        :
+        <button className='button-agregar' onClick={() => setMostrarModalDet(true)}>Agregar a favs</button>}
+        {/* modal */}
+        <div className={mostrarModalDet ? 'modal' : 'display-modal-none'}>
+            <section className='modal-main'>
+                <p>Inicia sesión para agregar pokemones</p>
+                <div className='buttons-modal'>
+                    <Link to='/login' className='button-login-link'>
+                        <button className='button-login'>Iniciar sesión</button>
+                    </Link>
+                    <button className='button-no' onClick={() => setMostrarModalDet(false)}>Nop</button>    
+                </div>
+            </section>
+        </div>
     </div>)
 };
 

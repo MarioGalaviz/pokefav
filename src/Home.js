@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
-import Usuarios from './Usuarios';
+import './Home.css';
 
-function Home() {
+function Home(props) {
     return (
         <div>
         <main>
@@ -13,10 +13,17 @@ function Home() {
                 </button>
             </Link>
             <Link to='/login'>
-                <p>Iniciar sesión</p>
+                <p className={!props.username ? '' : 'ocultar'}>Iniciar sesión</p>
             </Link>
         </main>
-        <Usuarios />
+        <div className='descripcion'>
+            <h1>Selecciona tus 3 pokemones favoritos</h1>
+            <ul>
+                <li>Busca pokemones</li>
+                <li>Selecciona los que te gusten</li>
+                <li>Ve los pokemones de otros usuarios</li>
+            </ul>
+        </div>
         </div>
     );
   }

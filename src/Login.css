@@ -22,9 +22,23 @@
     font-size: 1em;
   }
 
+  .login button:hover {
+    background-color: #2b6777 ;
+    color: white;
+  }
+
 .login p {
     margin: 5px;
     font-size: .95em;
+}
+
+.login .contra-incorrecta {
+    color: red;
+    font-size: .7em;
+}
+
+.login p:hover {
+    color: blue;
 }
 
 .login input {
