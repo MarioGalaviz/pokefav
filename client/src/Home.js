@@ -1,10 +1,15 @@
 import { Link, useNavigate } from 'react-router-dom'
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
+import ReactGA from 'react-ga';
 
 function Home(props) {
     
     let navigate = useNavigate()
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    },[])
     
     return (
         <div>

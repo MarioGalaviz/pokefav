@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Usuarios.css'
 import { useNavigate } from 'react-router-dom'
 import apisource from './apisource';
+import ReactGA from 'react-ga';
 
 function UsuariosTodos(props) {
     
@@ -16,6 +17,7 @@ function UsuariosTodos(props) {
         setUsuarios(list); 
       };
         fetchUsuarios();
+        ReactGA.pageview(window.location.pathname + window.location.search);
       },[props.username]);
     
     return(

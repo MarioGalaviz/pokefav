@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Lista.css';
+import ReactGA from 'react-ga';
 
 function Lista(props) {
   
@@ -18,9 +19,10 @@ function Lista(props) {
     const list = await data.json();
     
     setLista(list.pokemon);
-         
+    
   };
     fetchList();
+    ReactGA.pageview(window.location.pathname + window.location.search);
   },[props.tipo]);
 
   const [lista, setLista] = useState([{

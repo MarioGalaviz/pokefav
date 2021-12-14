@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Agregar.css';
 import apisource from './apisource';
+import ReactGA from 'react-ga';
 
 function Agregar(props) {
     let params = useParams();
@@ -45,6 +46,7 @@ function Agregar(props) {
             setPokeId(obj.id);
         };
         fetchPokes();
+        ReactGA.pageview(window.location.pathname + window.location.search);
     },[params.poke]);
 
     

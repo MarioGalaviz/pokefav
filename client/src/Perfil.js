@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Perfil.css'
 import { Link, useNavigate } from 'react-router-dom';
 import apisource from './apisource';
+import ReactGA from 'react-ga';
 
 function Perfil(props) {
     
@@ -41,6 +42,7 @@ function Perfil(props) {
             }
         };
         fetchPokes();
+        ReactGA.pageview(window.location.pathname + window.location.search);
     },[]);
 
     const cerrarSesion = async () => {

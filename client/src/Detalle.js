@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import './Detalle.css';
+import ReactGA from 'react-ga';
 
 
 
@@ -27,6 +28,7 @@ function Detalle(props) {
             setPokemon(poke);
         };
         fetchPokemon();
+        ReactGA.pageview(window.location.pathname + window.location.search);
         
     },[params.poke])
     

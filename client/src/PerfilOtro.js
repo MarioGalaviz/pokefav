@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Perfil.css'
 import { useNavigate, useParams } from 'react-router-dom';
 import apisource from './apisource';
+import ReactGA from 'react-ga';
 
 function PerfilOtro(props) {
 
@@ -37,6 +38,7 @@ function PerfilOtro(props) {
             }
         };
         fetchPokes();
+        ReactGA.pageview(window.location.pathname + window.location.search);
     },[params.user]);
     
     return (<div className='perfil'>

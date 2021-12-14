@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import apisource from './apisource';
+import ReactGA from 'react-ga';
 
 
 function Login(props) {
@@ -16,6 +17,10 @@ function Login(props) {
     const [usuarioExistente, setUsuarioExistente] = useState(false);
 
     let navigate = useNavigate();
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    },[])
     
     const handleChangeUsuario = ({ target }) => {
         const { value } = target;
