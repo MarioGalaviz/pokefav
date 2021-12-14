@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => {
     checkUsername();
-    ReactGA.initialize('G-KPF4JY7256');
+    ReactGA.initialize('UA-215295688-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
 
   },[])
