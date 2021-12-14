@@ -12,6 +12,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import apisource from './apisource';
 import UsuariosTodos from './UsuariosTodos';
+import ReactGA from 'react-ga';
 const axios = require('axios');
 
 axios.defaults.withCrendentails = true;
@@ -28,6 +29,9 @@ function App() {
 
   useEffect(() => {
     checkUsername();
+    ReactGA.initialize('G-KPF4JY7256');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+
   },[])
 
   const checkUsername = async () => {
